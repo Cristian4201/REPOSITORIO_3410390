@@ -1,6 +1,9 @@
 import 'dart:io';
 
 void main() {
+  //Cristian Arbey Benavides Marquez
+  //12. Pedir un número al usuario y determinar si es divisible por 5.
+  
   // DEFINICION DE VARIABLES
   int numero;
 

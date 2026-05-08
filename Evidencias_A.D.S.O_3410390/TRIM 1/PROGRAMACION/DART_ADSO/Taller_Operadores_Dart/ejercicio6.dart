@@ -1,18 +1,21 @@
 import 'dart:io';
 
 void main() {
-  // DEFINICION DE VARIABLES
-  double precioProducto, iva, total;
+//Cristian Arbey Benavides Marquez
+//6. Pedir el precio de un producto y mostrar el valor del IVA (19%) y el precio total con impuesto.
 
-  // ASIGNACION DE VALORES
-  print("Ingrese el precio del producto:");
-  precioProducto = double.parse(stdin.readLineSync()!);
+// DEFINICION DE VARIABLES
+double precioProducto, iva, total;
 
-  // PROCESO
-  iva = precioProducto * 0.19;
-  total = precioProducto + iva;
+// ASIGNACION DE VALORES
+print("Ingrese el precio del producto:");
+precioProducto = double.parse(stdin.readLineSync()!);
 
-  // SALIDA DE DATOS
-  print("El valor del IVA es: $iva");
-  print("El precio total con impuesto es: $total");
+// PROCESO
+iva = precioProducto * 0.19;
+total = precioProducto + iva;
+
+// SALIDA DE DATOS
+print("El valor del IVA es: $iva");
+print("El precio total con impuesto es: $total");
 }

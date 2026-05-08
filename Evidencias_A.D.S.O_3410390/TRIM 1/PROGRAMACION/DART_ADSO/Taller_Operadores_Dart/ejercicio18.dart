@@ -1,6 +1,9 @@
 import 'dart:io';
 
 void main() {
+  //Cristian Arbey Benavides Marquez
+  //18. Leer el número de un mes (1 a 4) y mostrar la estación del año correspondiente (ejemplo: 1-Verano, 2-Otoño, etc.).
+  
   // DEFINICION DE VARIABLES
   int mes;
 
@@ -24,5 +27,5 @@ void main() {
       break;
     default:
       print("Mes no válido para este ejercicio.");
-  }
+}
 }

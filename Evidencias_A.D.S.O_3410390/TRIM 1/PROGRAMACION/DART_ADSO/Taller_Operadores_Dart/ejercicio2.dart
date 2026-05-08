@@ -1,6 +1,9 @@
 import 'dart:io';
 
 void main(List<String> args) {
+//Cristian Arbey Benavides Marquez
+//2. Crear un algoritmo que pida al usuario el nombre de una ciudad y su temperatura actual en grados Celsius, y luego los muestre.
+
 //DEFINICIONDE VARIABLES
 String nombreCiudad; 
 double temperaturaGradosCelsius;

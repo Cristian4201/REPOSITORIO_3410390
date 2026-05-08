@@ -1,21 +1,24 @@
 import 'dart:io';
 
 void main() {
-  // DEFINICION DE VARIABLES
-  double base, altura, area, perimetro;
+//Cristian Arbey Benavides Marquez
+//5. Hacer un algoritmo que lea la base y la altura de un triángulo y muestre su perímetro y área
 
-  // ASIGNACION DE VALORES
-  print("Ingrese la base del triángulo:");
-  base = double.parse(stdin.readLineSync()!);
-  print("Ingrese la altura del triángulo:");
-  altura = double.parse(stdin.readLineSync()!);
+// DEFINICION DE VARIABLES
+double base, altura, area, perimetro;
 
-  // PROCESO
-  area = (base * altura) / 2;
+// ASIGNACION DE VALORES
+print("Ingrese la base del triángulo:");
+base = double.parse(stdin.readLineSync()!);
+print("Ingrese la altura del triángulo:");
+altura = double.parse(stdin.readLineSync()!);
 
-  perimetro = base * 3; 
+// PROCESO
+area = (base * altura) / 2;
 
-  // SALIDA DE DATOS
-  print("El área es: $area");
-  print("El perímetro (si sus lados son iguales) es: $perimetro");
+perimetro = base * 3; 
+
+// SALIDA DE DATOS
+print("El área es: $area");
+print("El perímetro (si sus lados son iguales) es: $perimetro");
 }

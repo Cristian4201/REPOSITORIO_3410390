@@ -1,6 +1,9 @@
 import 'dart:io';
 
 void main() {
+  //Cristian Arbey Benavides Marquez
+  //16. Un gimnasio ofrece un descuento del 20% si el cliente paga la anualidad completa (monto > 500.000), de lo contrario el descuento es del 5%. Calcular el total a pagar.
+  
   // DEFINICION DE VARIABLES
   double monto, descuento, total;
 
