@@ -10,14 +10,14 @@ void main() {
 
   // PROCESO
   if (monto > 500000) {
-    descuento = monto * 0.20; // 20%
+    descuento = monto * 0.20;
   } else {
-    descuento = monto * 0.05; // 5%
+    descuento = monto * 0.05;
   }
 
   total = monto - descuento;
 
   // SALIDA DE DATOS
-  print("El descuento aplicado es de: \$$descuento");
-  print("El total a pagar es: \$$total");
+  print("El descuento aplicado es de: $descuento");
+  print("El total a pagar es: $total");
 }

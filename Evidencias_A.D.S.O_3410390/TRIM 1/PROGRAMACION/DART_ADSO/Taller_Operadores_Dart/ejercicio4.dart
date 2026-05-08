@@ -8,12 +8,10 @@ void main() {
   print("Ingrese su edad actual:");
   edadActual = int.parse(stdin.readLineSync()!);
   
-  // Usamos 2024 como año actual para el cálculo
-  anioActual = 2024;
+  // 2026 COMO AÑO ACTUAL
+  anioActual = 2026;
 
   // PROCESO
-  // Restamos el año actual al 2050 para saber cuántos años pasarán
-  // y se los sumamos a la edad actual
   edadFutura = edadActual + (2050 - anioActual);
 
   // SALIDA DE DATOS

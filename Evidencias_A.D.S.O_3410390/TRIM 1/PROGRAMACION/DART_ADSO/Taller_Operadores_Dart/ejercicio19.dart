@@ -19,5 +19,5 @@ void main() {
   }
 
   // SALIDA DE DATOS
-  print("El salario total del trabajador es: \$$salarioTotal");
+  print("El salario total del trabajador es: $salarioTotal");
 }

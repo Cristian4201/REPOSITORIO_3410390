@@ -13,6 +13,6 @@ void main() {
   total = precioProducto + iva;
 
   // SALIDA DE DATOS
-  print("El valor del IVA es: \$$iva");
-  print("El precio total con impuesto es: \$$total");
+  print("El valor del IVA es: $iva");
+  print("El precio total con impuesto es: $total");
 }

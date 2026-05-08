@@ -20,5 +20,5 @@ void main() {
   salarioMensual = valorDia * diasLaborados;
 
   // SALIDA DE DATOS
-  print("El empleado $nombreEmpleado tiene un salario mensual de \$$salarioMensual.");
+  print("El empleado $nombreEmpleado tiene un salario mensual de $salarioMensual.");
 }

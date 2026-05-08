@@ -8,7 +8,7 @@ void main() {
   print("Ingrese el número del mes (1 al 4):");
   mes = int.parse(stdin.readLineSync()!);
 
-  // PROCESO Y SALIDA (Usando Switch que es muy común en clase)
+  // PROCESO Y SALIDA
   switch (mes) {
     case 1:
       print("Estación: Verano");

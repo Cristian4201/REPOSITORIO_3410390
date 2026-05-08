@@ -13,5 +13,4 @@ temperaturaGradosCelsius = double.parse(stdin.readLineSync()!);
 
 //SALIDA DE DATOS
 print('La ciudad de $nombreCiudad tiene una temperatura de $temperaturaGradosCelsius grados Celsius');
-
 }

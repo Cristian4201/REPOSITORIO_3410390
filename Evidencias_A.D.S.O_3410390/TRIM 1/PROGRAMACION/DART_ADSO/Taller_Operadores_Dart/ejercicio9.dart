@@ -8,7 +8,7 @@ void main() {
   print("Ingrese la medida del lado del cubo:");
   lado = double.parse(stdin.readLineSync()!);
 
-  // PROCESO (Lado al cubo es lado * lado * lado)
+  // PROCESO
   volumen = lado * lado * lado;
 
   // SALIDA DE DATOS

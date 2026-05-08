@@ -12,8 +12,7 @@ void main() {
 
   // PROCESO
   area = (base * altura) / 2;
-  // Para el perímetro en este nivel, usualmente se suman los tres lados. 
-  // Supongamos que es equilátero (lados iguales) para no complicarlo:
+
   perimetro = base * 3; 
 
   // SALIDA DE DATOS
