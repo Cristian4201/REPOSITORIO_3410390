@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratorio Interactivo de CSS</title>
+    <style>
+        :root {
+            --bg-principal: #121824;
+            --bg-tarjeta: #1e293b;
+            --texto: #f8fafc;
+            --borde: #334155;
+            --accent: #38bdf8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        p.subtitulo {
+            color: #94a3b8;
+            margin-top: 0;
+            margin-bottom: 25px;
+        }
+
+        .contenedor-laboratorio {
+            display: flex;
+            gap: 30px;
+            width: 100%;
+            max-width: 1100px;
+            background-color: var(--bg-tarjeta);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid var(--borde);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .panel-controles {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .grupo-control {
+            background-color: #0f172a;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid var(--borde);
+        }
+
+        .grupo-control h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: var(--accent);
+            border-bottom: 1px solid var(--borde);
+            padding-bottom: 5px;
+        }
+
+        .fila-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .fila-input:last-child {
+            margin-bottom: 0;
+        }
+
+        label {
+            font-size: 0.9rem;
+            width: 80px;
+            color: #cbd5e1;
+        }
+
+        select, input[type="number"], input[type="text"] {
+            background-color: #1e293b;
+            color: var(--texto);
+            border: 1px solid var(--borde);
+            padding: 6px 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            flex: 1;
+        }
+
+        input[type="range"] {
+            flex: 2;
+            accent-color: var(--accent);
+        }
+
+        .valor-dinamico {
+            font-family: monospace;
+            font-size: 0.9rem;
+            min-width: 45px;
+            text-align: right;
+            color: #94a3b8;
+        }
+
+        .panel-vista {
+            flex: 1.2;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .pantalla-simulador {
+            flex: 1;
+            background-color: #0f172a;
+            border: 2px dashed var(--borde);
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: auto;
+            min-height: 350px;
+            position: relative;
+        }
+
+        /* La caja que cambia dinámicamente */
+        #caja-experimental {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            text-align: center;
+            transition: background-color 0.1s, width 0.1s, height 0.1s;
+            box-sizing: border-box;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+
+        .panel-codigo {
+            background-color: #090d16;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #1e293b;
+        }
+
+        .panel-codigo pre {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace;
+            color: #34d399;
+            font-size: 0.9rem;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Laboratorio Interactivo de Dimensiones y Colores CSS</h1>
+    <p class="subtitulo">Modifica las unidades y formatos para ver el comportamiento en tiempo real</p>
+
+    <div class="contenedor-laboratorio">
+        
+        <!-- PANEL DE CONTROLES -->
+        <div class="panel-controles">
+            
+            <!-- SECCIÓN DIMENSIONES -->
+            <div class="grupo-control">
+                <h3><span style="vertical-align: middle;">📐</span> Unidades de Dimensión</h3>
+                
+                <div class="fila-input">
+                    <label for="tipo-unidad">Unidad:</label>
+                    <select id="tipo-unidad">
+                        <option value="px">px (Píxeles - Absoluta)</option>
+                        <option value="%">% (Porcentaje - Relativa)</option>
+                        <option value="rem">rem (Relativa al Root - 16px)</option>
+                        <option value="em">em (Relativa al Padre)</option>
+                    </select>
+                </div>
+
+                <div class="fila-input">
+                    <label for="input-ancho">Ancho:</label>
+                    <input type="range" id="input-ancho" min="10" max="300" value="150">
+                    <span class="valor-dinamico" id="val-ancho">150px</span>
+                </div>
+
+                <div class="fila-input">
+                    <label for="input-alto">Alto:</label>
+                    <input type="range" id="input-alto" min="10" max="300" value="150">
+                    <span class="valor-dinamico" id="val-alto">150px</span>
+                </div>
+            </div>
+
+            <!-- SECCIÓN COLORES -->
+            <div class="grupo-control">
+                <h3><span style="vertical-align: middle;">🎨</span> Formatos de Color</h3>
+                
+                <div class="fila-input">
+                    <label for="formato-color">Formato:</label>
+                    <select id="formato-color">
+                        <option value="hex">HEX (#RRGGBB)</option>
+                        <option value="rgb">RGB (Red, Green, Blue)</option>
+                        <option value="hsl">HSL (Hue, Saturation, Lightness)</option>
+                    </select>
+                </div>
+
+                <!-- Controles dinámicos para Color (Cambiables por JS) -->
+                <div id="controles-color-dinamicos">
+                    <!-- Se inyectan por JavaScript según el formato seleccionado -->
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PANEL DE VISTA PREVIA Y CÓDIGO -->
+        <div class="panel-box panel-view panel-vista">
+            <div class="pantalla-simulador" id="contenedor-padre">
+                <div id="caja-experimental">Caja</div>
+            </div>
+            
+            <div class="panel-codigo">
+                <pre id="codigo-css">.caja { ... }</pre>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Elementos del DOM
+        const tipoUnidad = document.getElementById('tipo-unidad');
+        const inputAncho = document.getElementById('input-ancho');
+        const inputAlto = document.getElementById('input-alto');
+        const valAncho = document.getElementById('val-ancho');
+        const valAlto = document.getElementById('val-alto');
+        
+        const formatoColor = document.getElementById('formato-color');
+        const controlesColorDinamicos = document.getElementById('controles-color-dinamicos');
+        
+        const cajaExperimental = document.getElementById('caja-experimental');
+        const codigoCss = document.getElementById('codigo-css');
+
+        // Valores por defecto para el color
+        let colorValores = {
+            hex: '#38bdf8',
+            rgb: { r: 56, g: 189, b: 248 },
+            hsl: { h: 199, s: 94, l: 60 }
+        };
+
+        // Cambiar rangos de los sliders según la unidad seleccionada
+        tipoUnidad.addEventListener('change', () => {
+            const unidad = tipoUnidad.value;
+            if (unidad === 'px') {
+                configurarSliders(10, 400, 150);
+            } else if (unidad === '%') {
+                configurarSliders(5, 100, 50);
+            } else if (unidad === 'rem' || unidad === 'em') {
+                configurarSliders(1, 25, 10);
+            }
+            actualizarLaboratorio();
+        });
+
+        function configurarSliders(min, max, value) {
+            inputAncho.min = min; inputAncho.max = max; inputAncho.value = value;
+            inputAlto.min = min; inputAlto.max = max; inputAlto.value = value;
+        }
+
+        // Renderizar los controles de color según el formato elegido
+        formatoColor.addEventListener('change', renderizarControlesColor);
+
+        function renderizarControlesColor() {
+            const formato = formatoColor.value;
+            let html = '';
+
+            if (formato === 'hex') {
+                html = `
+                    <div class="fila-input">
+                        <label for="color-hex">Hex Color:</label>
+                        <input type="text" id="color-hex" value="${colorValores.hex}" maxlength="7">
+                    </div>`;
+            } else if (formato === 'rgb') {
+                html = `
+                    <div class="fila-input"><label>Rojo (R):</label><input type="range" id="rgb-r" min="0" max="255" value="${colorValores.rgb.r}"><span class="valor-dinamico" id="val-rgb-r">${colorValores.rgb.r}</span></div>
+                    <div class="fila-input"><label>Verde (G):</label><input type="range" id="rgb-g" min="0" max="255" value="${colorValores.rgb.g}"><span class="valor-dinamico" id="val-rgb-g">${colorValores.rgb.g}</span></div>
+                    <div class="fila-input"><label>Azul (B):</label><input type="range" id="rgb-b" min="0" max="255" value="${colorValores.rgb.b}"><span class="valor-dinamico" id="val-rgb-b">${colorValores.rgb.b}</span></div>`;
+            } else if (formato === 'hsl') {
+                html = `
+                    <div class="fila-input"><label>Tono (H):</label><input type="range" id="hsl-h" min="0" max="360" value="${colorValores.hsl.h}"><span class="valor-dinamico" id="val-hsl-h">${colorValores.hsl.h}°</span></div>
+                    <div class="fila-input"><label>Satur. (S):</label><input type="range" id="hsl-s" min="0" max="100" value="${colorValores.hsl.s}"><span class="valor-dinamico" id="val-hsl-s">${colorValores.hsl.s}%</span></div>
+                    <div class="fila-input"><label>Brillo (L):</label><input type="range" id="hsl-l" min="0" max="100" value="${colorValores.hsl.l}"><span class="valor-dinamico" id="val-hsl-l">${colorValores.hsl.l}%</span></div>`;
+            }
+
+            controlesColorDinamicos.innerHTML = html;
+            asignarEventosColor();
+            actualizarLaboratorio();
+        }
+
+        function asignarEventosColor() {
+            const formato = formatoColor.value;
+            if (formato === 'hex') {
+                document.getElementById('color-hex').addEventListener('input', (e) => {
+                    colorValores.hex = e.target.value;
+                    actualizarLaboratorio();
+                });
+            } else if (formato === 'rgb') {
+                ['r', 'g', 'b'].forEach(canal => {
+                    document.getElementById(`rgb-${canal}`).addEventListener('input', (e) => {
+                        colorValores.rgb[canal] = e.target.value;
+                        document.getElementById(`val-rgb-${canal}`).innerText = e.target.value;
+                        actualizarLaboratorio();
+                    });
+                });
+            } else if (formato === 'hsl') {
+                ['h', 's', 'l'].forEach(canal => {
+                    document.getElementById(`hsl-${canal}`).addEventListener('input', (e) => {
+                        colorValores.hsl[canal] = e.target.value;
+                        const sufijo = canal === 'h' ? '°' : '%';
+                        document.getElementById(`val-hsl-${canal}`).innerText = e.target.value + sufijo;
+                        actualizarLaboratorio();
+                    });
+                });
+            }
+        }
+
+        // Función central para actualizar la interfaz y el código CSS generado
+        function actualizarLaboratorio() {
+            const unidad = tipoUnidad.value;
+            const ancho = inputAncho.value;
+            const alto = inputAlto.value;
+
+            // Actualizar etiquetas de dimensiones
+            valAncho.innerText = ancho + unidad;
+            valAlto.innerText = alto + unidad;
+
+            // Procesar string del color
+            const formato = formatoColor.value;
+            let colorString = '';
+            if (formato === 'hex') {
+                colorString = colorValores.hex;
+            } else if (formato === 'rgb') {
+                colorString = `rgb(${colorValores.rgb.r}, ${colorValores.rgb.g}, ${colorValores.rgb.b})`;
+            } else if (formato === 'hsl') {
+                colorString = `hsl(${colorValores.hsl.h}, ${colorValores.hsl.s}%, ${colorValores.hsl.l}%)`;
+            }
+
+            // Aplicar estilos reales al nodo del elemento de prueba
+            cajaExperimental.style.width = ancho + unidad;
+            cajaExperimental.style.height = alto + unidad;
+            cajaExperimental.style.backgroundColor = colorString;
+            cajaExperimental.innerText = `${ancho}${unidad}\nx\n${alto}${unidad}`;
+
+            // Reflejar la regla CSS en la interfaz
+            codigoCss.innerText = `.caja-experimental {\n    width: ${ancho}${unidad};\n    height: ${alto}${unidad};\n    background-color: ${colorString};\n}`;
+        }
+
+        // Listeners básicos para cambios de sliders de tamaño
+        inputAncho.addEventListener('input', actualizarLaboratorio);
+        inputAlto.addEventListener('input', actualizarLaboratorio);
+
+        // Inicialización del entorno al cargar la página
+        renderizarControlesColor();
+    </script>
+</body>
+</html>
