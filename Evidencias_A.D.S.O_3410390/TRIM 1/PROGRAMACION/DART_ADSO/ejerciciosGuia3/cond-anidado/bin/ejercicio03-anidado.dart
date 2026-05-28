@@ -10,33 +10,30 @@ descuento. El precio de cada computadora es de $1100000*/
 double descuento, total, precioComputadoras;
 int numComputadoras;
 
-print("Ingrese el numero de computadoras que se compraran: ");
-numComputadoras = int.parse(stdin.readLineSync()!);
-
 precioComputadoras = 1100000;
 
-total = numComputadoras * 1100000;
+print("Ingrese el numero de computadoras a comprar: ");
+numComputadoras = int.parse(stdin.readLineSync()!);
 
+total = numComputadoras * precioComputadoras;
 descuento = 0;
 
 if (numComputadoras < 5) {
   descuento = total * 0.1;
   total = total - descuento;
-  print("Debido a su cantidad de computadoras se le aplicara un descuento del 10%");
-}else{
-  if (numComputadoras >= 5 && numComputadoras < 10) {
+  print ("Se le aplicara un descuento del 10% al total de su compra.");
+  } else if (numComputadoras >=5 && numComputadoras < 10) {
     descuento = total * 0.2;
     total = total - descuento;
-    print("Debido a su cantidad de computadoras se le aplicara un descuento del 20%");
-  }else{
-    if (numComputadoras >= 10) {
-      descuento = total * 0.4;
-      total = total - descuento;
-      print("Debido a su cantidad de computadoras se le aplicara un descuento del 40%");
+    print ("Se le aplicara un descuento del 20% al total de su compra.");
+  } else {
+    descuento = total * 0.4;
+    total = total - descuento;
+    print ("Se le aplicara un descuento del 40% al total de su compra.");
     }
-  }
-  }
-
-  print("El total de su compra es de \$$total");
+  
+print("El total a pagar por la compra de $numComputadoras computadoras es: $total");
 
 }
+
+
