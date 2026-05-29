@@ -2,3 +2,83 @@ body{
     font-family: "Poppins", sans-serif;
     
 }
+
+
+
+
+
+
+body{
+    background-color: #0f172a;
+    font-family: Helvetica;
+    color: white;
+}
+
+.contenedor{
+    width: 80%;
+    margin: auto;
+}
+
+.header{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.header h1{
+    color: #38bdf8;
+}
+
+.header p{
+    color: #cbd5e1;
+}
+
+.card{
+    background-color: #1e293b;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.card h2{
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.card p{
+    margin-bottom: 10px;
+    line-height: 25px;
+}
+
+.card ul{
+    margin-left: 20px;
+}
+
+.card li{
+    margin-bottom: 10px;
+}
+
+.links{
+    text-align: center;
+}
+
+.imagen{
+    text-align: center;
+}
+
+.imagen img{
+    width: 220px;
+    border-radius: 10px;
+    border: 3px solid #38bdf8;
+}
+
+audio{
+    width: 100%;
+    margin-top: 10px;
+}
+
+video{
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
