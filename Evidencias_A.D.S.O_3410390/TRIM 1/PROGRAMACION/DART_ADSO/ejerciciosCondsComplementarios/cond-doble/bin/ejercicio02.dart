@@ -9,26 +9,27 @@ límite pagan una tarifa del 1.5%. Solicite la marca/modelo del vehículo y su a
 comercial actual. Determine cuál es el porcentaje aplicado y calcule el valor total del
 impuesto a pagar este año. */
 
-String? marcaVehiculo;
-double avaluoComercial, impuestoTotal, tarifa; 
+  double valorVehiculo, impuestoAnual, porcetajeImpuesto, tarifa;
+  String marca;
+  int modelo;
 
-print("Ingrese el modelo de su vehiculo: ");
-marcaVehiculo = stdin.readLineSync();
-print("Ingrese el avaluo comercial de su vehiculo: ");
-avaluoComercial = double.parse(stdin.readLineSync()!);
+  print("Ingrese la marca del vehiculo: ");
+  marca = stdin.readLineSync()!;
+  print("Ingrese el modelo del vehiculo: ");
+  modelo = int.parse(stdin.readLineSync()!);
+  print("Ingrese el avalúo del vehiculo: ");
+  valorVehiculo = double.parse(stdin.readLineSync()!);
 
-tarifa = 0;
-
-if (avaluoComercial > 150000000){
-    tarifa = avaluoComercial * 0.025;
-    impuestoTotal = avaluoComercial + tarifa;
-    print("A su avaluo comercial se le aplica una tarifa de 2.5 sobre el valor.");
-}else {
-  tarifa = avaluoComercial * 0.015;
-  impuestoTotal = avaluoComercial + tarifa;
-  print("A su avaluo comercial se le aplica una tarifa de 1.5 sobre el valor.");
-}
-
-print("El vehiculo $marcaVehiculo tiene que pagar actualmente un avaluo del \$$impuestoTotal");
-
+  if(valorVehiculo > 150000000){
+  tarifa = 2.5;
+  porcetajeImpuesto = valorVehiculo * 0.025;
+  
+  }else{
+    tarifa = 1.5;
+    porcetajeImpuesto = valorVehiculo * 0.015;
+  }
+  impuestoAnual = valorVehiculo + porcetajeImpuesto;
+  print("La tarifa aplicada es $tarifa%");
+  print("El impuesto es de: $porcetajeImpuesto");
+  print("El total a pagar del impuesto anual es de $impuestoAnual");
 }
