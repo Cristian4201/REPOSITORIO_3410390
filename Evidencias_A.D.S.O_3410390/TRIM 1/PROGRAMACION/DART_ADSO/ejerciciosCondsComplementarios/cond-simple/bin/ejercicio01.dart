@@ -1,3 +1,5 @@
+import 'dart:io';
+
 void main(List<String> args) {
   /*1.  En el centro de formación CPIC, se requiere calcular el auxilio de transporte para los
 aprendices del programa ADSO. El auxilio base se calcula internamente
@@ -9,4 +11,21 @@ distancia. Imprimir el nombre del aprendiz, el auxilio base calculado y el total
 recibir. */
 
 print("--- Gestion de auxiolio de transporte CPIC");
+
+String? nombre, municipio;
+double auxilioBase, totalRecibir, diasAsistencia;
+
+print("Cual es su nombre: ");
+nombre = stdin.readLineSync() ?? "";
+print("En que municipio vive: ");
+municipio = stdin.readLineSync()!.trim().toLowerCase();
+print("Ingrese el dia de asistencias: ");
+diasAsistencia = double.parse(stdin.readLineSync()!);
+auxilioBase = diasAsistencia * 5000;
+totalRecibir = auxilioBase;
+if (municipio != "manizales");{
+  double extra = auxilioBase * 0.15;
+  totalRecibir = auxilioBase + extra;
+}
+print("El total a recibir es: \$$totalRecibir");
 }
