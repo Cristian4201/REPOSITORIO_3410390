@@ -30,7 +30,7 @@ body{
 }
 
 .header p{
-    color: #cbd5e1;
+    color: #000000;
 }
 
 .card{
@@ -81,4 +81,9 @@ video{
     margin-top: 10px;
     border-radius: 10px;
 }
-
+.card2{
+    background-color: #1e293b;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}

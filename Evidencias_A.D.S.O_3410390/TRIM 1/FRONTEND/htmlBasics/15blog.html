@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog html 5</title>
+        <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            color: rgb(0, 0, 0);
+            background-color: rgb(255, 255, 255);
+            line-height: 1.5;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            background-color: aliceblue;
+            color: rgb(64, 82, 97);
+            text-align: center;
+            padding: 1rem;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            color: #cbd5e1;
+            font-size: 1rem;
+        }
+
+        nav {
+            background-color: #334155;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+         nav a{
+            text-decoration: none;
+            color: aliceblue;
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background 0.4s;
+        }
+        nav a:hover{
+            background-color: aqua;
+            display: block;
+        }
+         main{
+            max-width: 1200px;
+            margin: 1rem auto;
+            display: flex;
+            padding: 0 1rem;
+            gap: 2rem;
+        }
+        article{
+            background-color: #e8e9d9;
+            border-radius: 10px;
+            padding: 0.7rem;
+            box-shadow: 0.4px 6px #cfcfcf;
+            margin-bottom: 1rem;
+        }
+        article h3{
+            color: #6d6c6d;
+        }
+        .fecha{
+            color: #6d6c6d;
+            font-size: 0.8rem;
+        }
+        section{
+            color: #b4b1b4;
+            font-size: 0.8rem;
+        }
+        aside{
+            flex: 3px;
+            background-color: #e8e9d9;
+            border-radius: 10px;
+            padding: 0.7rem;
+            box-shadow: 0.4px 6px #cfcfcf;
+        }
+        footer{
+            background-color: #cfcfcf;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Blog de aprendizaje ADSO</h1>
+        <p>Espacio para generacion de contenido relacionado a temas del tecnologo ADSO</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#">INICIO</a></li>
+            <li><a href="#">ARTICULOS</a></li>
+            <li><a href="#">CONTACTO</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Ultimas publicaciones</h2>
+            <article>
+                <h3>Como dejar de procrastinar</h3>
+                <p>Fecha: 3 de Junio 2026</p>
+                <p>Tecnicas para aprovechar cada segundo de tu tiempo durante cada una de las formaciones. No seas como Jose Maria</p>
+            </article>
+            <article>
+                <h3></h3>
+                <p class="fecha">1 Junio 2026</p>
+                <p>uso de las eiquetas HTML 5 que permiten mejorar el SEO (Seach Engine optimization) de los sitios web y la accesibilidad a personas con discapacidad</p>
+            </article>
+        </section>
+        <aside>
+            <h3>Acerca de mi</h3>
+            <p>Joven talento del desarrollo de software. Diamante en bruto por pulir con muchas ganas dde aprender todo sobre el mundo del Desarrollo web</p>
+        </aside>
+    </main>
+    <footer>
+        <p>&copy; 2026 - blog con fines educativos ADSO</p>
+    </footer>
+</body>
+</html>
