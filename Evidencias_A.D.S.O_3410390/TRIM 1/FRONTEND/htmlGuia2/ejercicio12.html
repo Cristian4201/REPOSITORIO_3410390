@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estados de un Botón</title>
+
+<style>
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background:#eef4ff;
+    text-align:center;
+    padding:40px;
+}
+
+h2{
+    color:#2c3e50;
+}
+
+button{
+    background:linear-gradient(45deg,#28a745,#20c997);
+    color:white;
+    border-radius:10px;
+    border:2px solid transparent;
+    padding:12px 28px;
+    font-size:16px;
+    margin:12px;
+    transition:0.3s;
+}
+
+button:hover{
+    background:linear-gradient(45deg,#218838,#17a589);
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+button:focus{
+    border:2px solid #ff9800;
+    outline:none;
+}
+
+button:active{
+    transform:translateY(3px);
+}
+
+button:disabled{
+    background:#b5b5b5;
+    color:#f2f2f2;
+    cursor:not-allowed;
+    box-shadow:none;
+}
+
+.info{
+    margin-top:30px;
+    background:white;
+    display:inline-block;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    text-align:left;
+}
+
+</style>
+
+</head>
+<body>
+
+<h2>Estados de los Botones en CSS</h2>
+
+<button>Botón Normal</button>
+<button autofocus>Botón Focus</button>
+<button disabled>Botón Deshabilitado</button>
+
+<div class="info">
+    <p><strong>Hover:</strong> El botón cambia de color y aparece una sombra.</p>
+    <p><strong>Focus:</strong> Se resalta con un borde naranja.</p>
+    <p><strong>Active:</strong> El botón baja un poco al hacer clic.</p>
+    <p><strong>Disabled:</strong> Se muestra en color gris y no permite interacción.</p>
+</div>
+
+</body>
+</html>

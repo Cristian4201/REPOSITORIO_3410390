@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Posicionamiento CSS</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f2f2f2;
+    height:1800px;
+}
+
+.encabezado{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#1e3a8a;
+    color:white;
+    text-align:center;
+    padding:18px;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.panel{
+    position:relative;
+    width:500px;
+    height:280px;
+    background:white;
+    border:2px solid #1e3a8a;
+    margin:140px auto;
+    border-radius:10px;
+    padding:20px;
+    box-shadow:0px 5px 10px rgba(0,0,0,0.2);
+}
+
+.etiqueta{
+    position:absolute;
+    bottom:20px;
+    left:20px;
+    background:#ff9800;
+    color:white;
+    padding:15px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.boton{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:#e91e63;
+    color:white;
+    padding:15px 25px;
+    border-radius:30px;
+    font-weight:bold;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="encabezado">
+    Menú Principal
+</div>
+
+<div class="panel">
+    Este es un contenedor con posición <b>relative</b>.
+
+    <div class="etiqueta">
+        Elemento Absolute
+    </div>
+</div>
+
+<div class="boton">
+    Contáctanos
+</div>
+
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unidades de Medida en CSS</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    background:#e8eef7;
+    padding:40px;
+}
+
+h1{
+    text-align:center;
+    color:#1f3c88;
+    margin-bottom:35px;
+}
+
+.seccion{
+    background:#ffffff;
+    border-left:8px solid #1f3c88;
+    padding:20px;
+    margin-bottom:25px;
+    border-radius:8px;
+}
+
+h2{
+    margin-bottom:15px;
+    color:#333;
+}
+
+/* Porcentaje */
+
+.marco{
+    width:450px;
+    border:3px dashed #555;
+    padding:15px;
+}
+
+.cajaPorcentaje{
+    width:100%;
+    height:55px;
+    background:#29b6f6;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* VW */
+
+.cajaVW{
+    width:100vw;
+    max-width:100%;
+    height:55px;
+    background:#66bb6a;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* VH */
+
+.cajaVH{
+    height:180px;
+    background:#ff7043;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Grid */
+
+.contenedorGrid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:12px;
+}
+
+.item{
+    background:#ab47bc;
+    color:white;
+    text-align:center;
+    padding:35px;
+    border-radius:6px;
+}
+
+p{
+    margin-top:12px;
+    color:#555;
+}
+
+</style>
+</head>
+<body>
+
+<h1>Ejemplo de Unidades CSS</h1>
+
+<div class="seccion">
+
+    <h2>Unidad %</h2>
+
+    <div class="marco">
+        Contenedor de 450px
+
+        <div class="cajaPorcentaje">
+            Ancho = 100%
+        </div>
+    </div>
+
+    <p>La unidad porcentaje depende del tamaño del elemento contenedor.</p>
+
+</div>
+
+<div class="seccion">
+
+    <h2>Unidad vw</h2>
+
+    <div class="cajaVW">
+        Ancho = 100vw
+    </div>
+
+    <p>La unidad vw toma como referencia el ancho completo de la ventana.</p>
+
+</div>
+
+<div class="seccion">
+
+    <h2>Unidad vh</h2>
+
+    <div class="cajaVH">
+        Altura = 100vh
+    </div>
+
+    <p>La unidad vh utiliza la altura visible del navegador.</p>
+
+</div>
+
+<div class="seccion">
+
+    <h2>Unidad fr</h2>
+
+    <div class="contenedorGrid">
+
+        <div class="item">2fr</div>
+        <div class="item">1fr</div>
+        <div class="item">1fr</div>
+
+    </div>
+
+    <p>La unidad <strong>fr</strong> reparte el espacio disponible entre las columnas del Grid.</p>
+
+</div>
+
+</body>
+</html>

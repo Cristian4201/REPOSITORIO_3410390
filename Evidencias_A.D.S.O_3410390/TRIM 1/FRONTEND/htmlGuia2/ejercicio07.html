@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #eef5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+h2{
+    margin-bottom: 25px;
+    color: #1f3c88;
+}
+
+.contenedor{
+    width: 700px;
+    height: 280px;
+    border: 3px solid #1f3c88;
+    background: #ffffff;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    position: relative;
+    border-radius: 12px;
+}
+
+.item{
+    width: 95px;
+    height: 95px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: 2px solid #1565c0;
+}
+
+.lineaHorizontal{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    border-top: 2px dashed red;
+}
+
+.lineaVertical{
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    border-left: 2px dashed green;
+}
+
+</style>
+
+</head>
+<body>
+
+<h2>Flexbox - Dirección Row</h2>
+
+<div class="contenedor">
+
+    <div class="lineaHorizontal"></div>
+    <div class="lineaVertical"></div>
+
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+
+</div>
+
+</body>
+</html>
