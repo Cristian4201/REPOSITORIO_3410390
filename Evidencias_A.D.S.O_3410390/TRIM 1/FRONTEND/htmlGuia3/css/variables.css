@@ -1,6 +1,6 @@
 :root {
     --bg-principal: #0f172a;   /* Fondo general oscuro */
     --text-color: #f8fafc;     /* Texto claro */
-    --card-bg: #1e293b;        /* Fondo de los contenedores/tarjetas */
-    --accent-color: #38bdf8;   /* Azul brillante para resaltar */
+    --card-bg: #1e293b;        /* Fondo de las tarjetas */
+    --accent-color: #38bdf8;   /* Azul brillante para destacar */
 }
