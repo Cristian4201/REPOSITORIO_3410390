@@ -1,81 +1,250 @@
-/* Modificamos el body completo con Flexbox estructural */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --- PUNTO 3: STICKY FOOTER ABSOLUTO --- */
 body {
     background-color: var(--bg-principal);
     color: var(--text-color);
     font-family: Arial, sans-serif;
-    margin: 0;
     
-    /* REQUISITO: Configurar Flexbox en dirección columna y altura completa */
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* 100vh = Ocupa el 100% del alto de la pantalla visible */
+    min-height: 100vh;
 }
 
-/* REQUISITO: El contenido central (main) se expande para empujar al footer */
 main {
     flex: 1; 
-    display: flex;
-    justify-content: center; /* Centra la tarjeta horizontalmente */
-    align-items: center;     /* Centra la tarjeta verticalmente en el espacio disponible */
-    padding: 20px 0;
-}
-
-.perfil {
-    width: calc(100% - 40px); 
-    max-width: 320px; 
-    background-color: var(--card-bg);
-    border: 2px solid var(--accent-color);
-    text-align: center;
-    padding: 24px;
-    border-radius: 8px;
-}
-
-.perfil img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.perfil h2 {
-    color: var(--accent-color);
-    font-size: clamp(1.4rem, 5vw, 2.2rem); 
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-
-.perfil p b {
-    color: var(--accent-color);
-    font-size: 15px;
-}
-
-.perfil p {
-    font-size: 14px;
-    line-height: 1.5;
-    margin-bottom: 15px;
-}
-
-.perfil button {
-    background-color: var(--accent-color);
-    color: var(--card-bg);
-    border: none;
-    padding: 10px 20px;
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 10px;
+    padding: 40px 20px;
     width: 100%;
 }
 
-.perfil button:hover {
-    opacity: 0.9;
+footer {
+    background-color: var(--card-bg);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Estilos sencillos para el Footer */
-footer {
-    background-color: var(--card-bg); /* Usamos la variable de color para el fondo */
+/* --- PUNTO 1 Y 2: SECCIÓN DE PERFIL --- */
+.perfil {
+    /* PUNTO 2: Contenedor inteligente con ancho calc(100% - 40px) */
+    width: calc(100% - 40px);
+    max-width: 450px; 
+    
+    margin: 0 auto 50px auto;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.perfil-banner {
+    background-color: var(--accent-color);
+    height: 100px;
+    opacity: 0.8;
+}
+
+.perfil-content {
+    padding: 0 20px 30px 20px;
     text-align: center;
-    padding: 15px;
+}
+
+.foto-iniciales {
+    width: 90px;
+    height: 90px;
+    background-color: var(--card-bg);
+    border: 3px solid var(--accent-color);
+    border-radius: 50%;
+    margin: -45px auto 15px auto;
+    line-height: 84px;
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+/* PUNTO 2: h1 con Tipografía Fluida clamp() */
+.perfil h1 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    margin-bottom: 5px;
+}
+
+.perfil .rol {
+    color: var(--accent-color);
+    font-weight: bold;
     font-size: 14px;
-    border-top: 1px solid var(--accent-color); /* Una línea sutil arriba del footer */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.perfil .bio {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* --- PUNTO 5: MICROINTERACCIONES EN BOTÓN --- */
+.btn-enviar {
+    background-color: var(--accent-color);
+    color: var(--bg-principal);
+    border: none;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    
+    /* Múltiples propiedades combinadas con curvas de transición */
+    transition: background-color 0.3s ease, transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-enviar:hover {
+    opacity: 0.95;
+    background-color: #ffffff; 
+}
+
+.btn-enviar:active {
+    transform: scale(0.95); 
+}
+
+/* --- PUNTO 4 Y 8: FILA DE EQUIPO Y ANIMACIONES --- */
+.equipo-seccion {
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+}
+
+.seccion-titulo {
+    text-align: center;
+    margin-bottom: 25px;
+    color: var(--accent-color);
+}
+
+.equipo-fila {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.tarjeta-miembro {
+    background-color: var(--card-bg);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: calc(33.33% - 14px); 
+    min-width: 250px; 
+    
+    /* PUNTO 8: Aplicación del efecto Fade-In Up */
+    animation: fadeInUp 0.8s ease-out forwards;
+    opacity: 0; 
+}
+
+/* PUNTO 4: Control de Imagen Avanzado */
+.tarjeta-miembro img {
+    width: 120px;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;   
+    border-radius: 50%;  
+    border: 3px solid var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.tarjeta-miembro h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.tarjeta-miembro p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* PUNTO 8: Retrasos de animación escalonados */
+.tarjeta-1 { animation-delay: 0.2s; }
+.tarjeta-2 { animation-delay: 0.4s; }
+.tarjeta-3 { animation-delay: 0.6s; }
+
+/* --- PUNTO 6: MENÚ DESPLEGABLE ACORDEÓN --- */
+.faq-seccion {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.acordeon details {
+    background-color: var(--card-bg);
+    margin-bottom: 10px;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.acordeon summary {
+    padding: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    list-style: none; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.acordeon summary::-webkit-details-marker {
+    display: none;
+}
+
+.icono-flecha {
+    font-size: 12px;
+    color: var(--accent-color);
+    transition: transform 0.3s ease; 
+}
+
+.acordeon details[open] .icono-flecha {
+    transform: rotate(180deg);
+}
+
+.acordeon details p {
+    padding: 0 15px 15px 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    opacity: 0.8;
+}
+
+/* --- PUNTO 7: ANIMACIÓN DE CARGA (SPINNER) --- */
+.loader-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1); 
+    border-top-color: var(--accent-color);       
+    border-radius: 50%;                          
+    animation: rotarSpinner 1s linear infinite;
+}
+
+/* --- KEYFRAMES --- */
+
+/* PUNTO 7: Animación del Spinner */
+@keyframes rotarSpinner {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* PUNTO 8: Efecto Fade-In Up */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

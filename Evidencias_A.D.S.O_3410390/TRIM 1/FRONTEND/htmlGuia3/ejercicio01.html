@@ -3,29 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil de Usuario</title>
-
+    <title>Taller de Maquetación Avanzada - ADSO</title>
     <link rel="stylesheet" href="css/variables.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+    <div class="loader-container">
+        <div class="loader"></div>
+    </div>
+
     <main>
-        <div class="perfil">
-            <img src="img/ejercicio1.jpeg" alt="Foto de perfil">
+        
+        <section class="perfil">
+            <div class="perfil-banner"></div>
+            <div class="perfil-content">
+                <div class="foto-iniciales">CB</div>
+                <h1>Cristian Benavides</h1>
+                <p class="rol">Estudiante ADSO</p>
+                <p class="bio">
+                    Apasionado por la arquitectura de software, el diseño de bases de datos y la creación de interfaces interactivas eficientes utilizando metodologías ágiles.
+                </p>
+                <button class="btn-enviar">Enviar Formulario</button>
+            </div>
+        </section>
 
-            <h2>Cristian Benavides</h2>
+        <section class="equipo-seccion">
+            <h2 class="seccion-titulo">Equipo de Desarrollo</h2>
+            <div class="equipo-fila">
+                
+                <div class="tarjeta-miembro tarjeta-1">
+                    <img src="https://picsum.photos/400/600" alt="Desarrollador 1">
+                    <h3>Carlos Pérez</h3>
+                    <p>Back-end Developer</p>
+                </div>
 
-            <p><b>Estudiante ADSO</b></p>
+                <div class="tarjeta-miembro tarjeta-2">
+                    <img src="https://picsum.photos/500/300" alt="Desarrolladora 2">
+                    <h3>Ana Gómez</h3>
+                    <p>UI/UX Designer</p>
+                </div>
 
-            <p>Apasionado por la arquitectura de software, el diseño de bases de datos y la creación de interfaces interactivas eficientes utilizando metodologías ágiles.</p>
+                <div class="tarjeta-miembro tarjeta-3">
+                    <img src="https://picsum.photos/400/400" alt="Desarrollador 3">
+                    <h3>Luis Martínez</h3>
+                    <p>Tester QA</p>
+                </div>
 
-            <button>Ver Perfil</button>
-        </div>
+            </div>
+        </section>
+
+        <section class="faq-seccion">
+            <h2 class="seccion-titulo">Preguntas Frecuentes</h2>
+            
+            <div class="acordeon">
+                <details>
+                    <summary>¿Qué es ADSO en el SENA? <span class="icono-flecha">▼</span></summary>
+                    <p>Es el programa de tecnólogo en Análisis y Desarrollo de Software, enfocado en formar competencias clave para la industria tecnológica.</p>
+                </details>
+
+                <details>
+                    <summary>¿Qué es una variable en CSS? <span class="icono-flecha">▼</span></summary>
+                    <p>Es una propiedad personalizada que permite almacenar valores de diseño (como colores o medidas) para reutilizarlos en toda la hoja de estilos.</p>
+                </details>
+            </div>
+        </section>
+
     </main>
 
     <footer>
-        <p>&copy; 2026 - Desarrollado en el Tecnólogo ADSO</p>
+        <p>&copy; 2026 - Tecnólogo en Análisis y Desarrollo de Software (ADSO)</p>
     </footer>
 
 </body>
