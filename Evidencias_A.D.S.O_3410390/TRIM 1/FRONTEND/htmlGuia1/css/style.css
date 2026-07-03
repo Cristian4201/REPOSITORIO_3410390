@@ -1,0 +1,20 @@
+body{
+    font-family: "Poppins", sans-serif;
+    
+}
+
+#caja-principal {
+    background-color: #1a1a1a; /* Color de fondo oscuro */
+    color: #ffffff;             /* Color de texto blanco */
+}
+
+.caja-secundaria {
+    border: 2px solid blue;     /* Borde sólido de 2px de grosor y color azul */
+}
+
+.tarjeta {
+    padding: 20px;              /* Espaciado interno (separa el texto del borde) */
+    margin: 15px;               /* Margen externo (separa la tarjeta de otros elementos) */
+    background-color: #f0f0f0;  /* Fondo gris claro para ver claramente dónde termina la tarjeta */
+    border: 1px solid #cccccc;  /* Borde gris sutil opcional */
+}
