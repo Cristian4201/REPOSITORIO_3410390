@@ -1,0 +1,81 @@
+/* Modificamos el body completo con Flexbox estructural */
+body {
+    background-color: var(--bg-principal);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    
+    /* REQUISITO: Configurar Flexbox en dirección columna y altura completa */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 100vh = Ocupa el 100% del alto de la pantalla visible */
+}
+
+/* REQUISITO: El contenido central (main) se expande para empujar al footer */
+main {
+    flex: 1; 
+    display: flex;
+    justify-content: center; /* Centra la tarjeta horizontalmente */
+    align-items: center;     /* Centra la tarjeta verticalmente en el espacio disponible */
+    padding: 20px 0;
+}
+
+.perfil {
+    width: calc(100% - 40px); 
+    max-width: 320px; 
+    background-color: var(--card-bg);
+    border: 2px solid var(--accent-color);
+    text-align: center;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.perfil img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.perfil h2 {
+    color: var(--accent-color);
+    font-size: clamp(1.4rem, 5vw, 2.2rem); 
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.perfil p b {
+    color: var(--accent-color);
+    font-size: 15px;
+}
+
+.perfil p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.perfil button {
+    background-color: var(--accent-color);
+    color: var(--card-bg);
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.perfil button:hover {
+    opacity: 0.9;
+}
+
+/* Estilos sencillos para el Footer */
+footer {
+    background-color: var(--card-bg); /* Usamos la variable de color para el fondo */
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    border-top: 1px solid var(--accent-color); /* Una línea sutil arriba del footer */
+}
