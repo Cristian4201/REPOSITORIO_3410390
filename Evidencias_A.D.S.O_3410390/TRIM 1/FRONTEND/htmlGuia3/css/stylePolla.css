@@ -1,0 +1,320 @@
+/* ============================================================
+   VARIABLES CSS (Custom Properties)
+   Se usan en :hover del botón y en varios colores del sitio
+   ============================================================ */
+:root {
+  --color-primary: #1f6f4a;
+  --color-primary-dark: #154d33;
+  --color-accent: #f2c94c;
+  --color-accent-dark: #d9a916;
+  --color-bg: #f2f6f3;
+  --color-card: #ffffff;
+  --color-text: #1c2b24;
+  --color-text-light: #5b6b63;
+  --color-danger: #e5484d;
+  --radius: 14px;
+  --transition: 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+/* ============================================================
+   PUNTO 20: HEADER — título/logo + widget de usuario
+   ============================================================ */
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 18px 32px;
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 2rem;
+}
+
+.marca h1 {
+  font-size: 1.4rem;
+}
+
+.widget-usuario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 8px 16px;
+  border-radius: var(--radius);
+}
+
+.avatar-usuario {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-primary-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.nombre-usuario {
+  margin: 0;
+  font-weight: 600;
+}
+
+.stats-usuario {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #eafff4;
+}
+
+/* ============================================================
+   PUNTO 20: MAIN — 2 columnas (partidos + ranking) en escritorio
+   ============================================================ */
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+  padding: 32px;
+  align-items: start;
+}
+
+.modulo-partidos h2,
+.modulo-ranking h2 {
+  margin-bottom: 16px;
+  font-size: 1.15rem;
+}
+
+/* ============================================================
+   PUNTO 21: REJILLA DE PARTIDOS — CSS Grid
+   2 columnas en escritorio, 1 columna en móvil (ver @media)
+   ============================================================ */
+.rejilla-partidos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+/* ============================================================
+   PUNTO 21: TARJETA DE PARTIDO — Flexbox
+   Bandera/Equipo 1 — Input — X — Input — Bandera/Equipo 2
+   ============================================================ */
+.tarjeta-partido {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: var(--color-card);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.equipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+}
+
+.bandera {
+  font-size: 1.6rem;
+}
+
+.nombre-equipo {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.versus {
+  font-weight: 700;
+  color: var(--color-text-light);
+}
+
+/* Campos de marcador: sin flechas nativas, letra grande, centrado */
+.input-marcador {
+  width: 48px;
+  height: 48px;
+  font-size: 1.3rem;
+  text-align: center;
+  border: 2px solid #dfe6e2;
+  border-radius: 10px;
+  outline: none;
+  transition: border-color var(--transition);
+}
+
+.input-marcador:focus {
+  border-color: var(--color-primary);
+}
+
+/* Quita las flechas nativas del input number */
+.input-marcador::-webkit-inner-spin-button,
+.input-marcador::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-marcador {
+  -moz-appearance: textfield;
+}
+
+/* ============================================================
+   PUNTO 23: VALIDACIÓN VISUAL — :invalid con min="0"
+   Si el usuario escribe un número negativo, el borde se pone rojo
+   ============================================================ */
+.input-marcador:invalid {
+  border-color: var(--color-danger);
+  background-color: #fdecec;
+}
+
+/* ============================================================
+   PUNTO 23: :focus-within — resalta toda la tarjeta al editar
+   ============================================================ */
+.tarjeta-partido:focus-within {
+  background-color: #eaf7ef;
+  box-shadow: 0 0 0 3px var(--color-accent), 0 10px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   PUNTO 23: BOTÓN "Guardar Pronósticos" — flotante + microanimación
+   ============================================================ */
+.btn-guardar {
+  position: fixed;
+  right: 28px;
+  bottom: 28px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 50px;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transition: background-color var(--transition), transform 0.15s ease;
+}
+
+/* Hover: cambia de color usando la variable CSS */
+.btn-guardar:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Active: microinteracción de hundimiento */
+.btn-guardar:active {
+  transform: scale(0.95);
+}
+
+/* ============================================================
+   PUNTO 22: TABLA DE RANKING
+   ============================================================ */
+.tabla-ranking {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background-color: var(--color-card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.tabla-ranking th,
+.tabla-ranking td {
+  padding: 12px 10px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.tabla-ranking thead {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.avatar-mini {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Filas cebra con :nth-child */
+.tabla-ranking tbody tr:nth-child(even) {
+  background-color: var(--color-bg);
+}
+
+.tabla-ranking tbody tr:nth-child(odd) {
+  background-color: var(--color-card);
+}
+
+/* Destacar al líder con :first-child */
+.tabla-ranking tbody tr:first-child {
+  background: linear-gradient(90deg, #fff6da, #ffe9a8);
+  font-weight: 700;
+  transition: transform var(--transition);
+}
+
+.tabla-ranking tbody tr:first-child .avatar-mini {
+  background-color: var(--color-accent-dark);
+}
+
+.tabla-ranking tbody tr:first-child:hover {
+  transform: scale(1.02);
+}
+
+/* ============================================================
+   RESPONSIVE — 1 sola columna en dispositivos móviles
+   ============================================================ */
+@media (max-width: 768px) {
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .rejilla-partidos {
+    grid-template-columns: 1fr;
+  }
+
+  .cabecera {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .btn-guardar {
+    right: 16px;
+    bottom: 16px;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+  }
+}

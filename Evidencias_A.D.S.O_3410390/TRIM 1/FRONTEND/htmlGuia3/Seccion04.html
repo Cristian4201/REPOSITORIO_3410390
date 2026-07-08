@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polla Mundialista 2026</title>
+  <link rel="stylesheet" href="css/stylePolla.css">
+</head>
+<body>
+
+  <!-- ======================================================
+       PUNTO 20: <header> con título, logo y widget de usuario
+       ====================================================== -->
+  <header class="cabecera">
+    <div class="marca">
+      <span class="logo" aria-hidden="true">🏆</span>
+      <h1>Polla Mundialista 2026</h1>
+    </div>
+
+    <div class="widget-usuario">
+      <span class="avatar-usuario">CM</span>
+      <div class="datos-usuario">
+        <p class="nombre-usuario">Camilo Morales</p>
+        <p class="stats-usuario">45 pts &nbsp;·&nbsp; 3° lugar</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       PUNTO 20: <main> dividido en 2 secciones
+       ====================================================== -->
+  <main class="contenedor-principal">
+
+    <!-- ====================================================
+         PUNTO 21: Módulo de Partidos (CSS Grid + Flexbox)
+         ==================================================== -->
+    <section class="modulo-partidos">
+      <h2>Fase de Grupos &mdash; Jornada 1</h2>
+
+      <!-- Rejilla principal: CSS Grid, 2 columnas en escritorio, 1 en móvil -->
+      <div class="rejilla-partidos">
+
+        <!-- Tarjeta de partido: Flexbox para alinear horizontalmente -->
+        <article class="tarjeta-partido">
+          <div class="equipo">
+            <span class="bandera">🇧🇷</span>
+            <span class="nombre-equipo">Brasil</span>
+          </div>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de Brasil">
+          <span class="versus">X</span>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de Argentina">
+          <div class="equipo">
+            <span class="nombre-equipo">Argentina</span>
+            <span class="bandera">🇦🇷</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-partido">
+          <div class="equipo">
+            <span class="bandera">🇪🇸</span>
+            <span class="nombre-equipo">España</span>
+          </div>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de España">
+          <span class="versus">X</span>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de Francia">
+          <div class="equipo">
+            <span class="nombre-equipo">Francia</span>
+            <span class="bandera">🇫🇷</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-partido">
+          <div class="equipo">
+            <span class="bandera">🇲🇽</span>
+            <span class="nombre-equipo">México</span>
+          </div>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de México">
+          <span class="versus">X</span>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de Estados Unidos">
+          <div class="equipo">
+            <span class="nombre-equipo">Estados Unidos</span>
+            <span class="bandera">🇺🇸</span>
+          </div>
+        </article>
+
+        <article class="tarjeta-partido">
+          <div class="equipo">
+            <span class="bandera">🇩🇪</span>
+            <span class="nombre-equipo">Alemania</span>
+          </div>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de Alemania">
+          <span class="versus">X</span>
+          <input type="number" class="input-marcador" min="0" value="0" aria-label="Marcador de Portugal">
+          <div class="equipo">
+            <span class="nombre-equipo">Portugal</span>
+            <span class="bandera">🇵🇹</span>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- PUNTO 23: Botón flotante "Guardar Pronósticos" -->
+      <button type="button" class="btn-guardar">💾 Guardar Pronósticos</button>
+    </section>
+
+    <!-- ====================================================
+         PUNTO 22: Módulo de Ranking (tabla de posiciones)
+         ==================================================== -->
+    <aside class="modulo-ranking">
+      <h2>Tabla de Posiciones</h2>
+
+      <table class="tabla-ranking">
+        <thead>
+          <tr>
+            <th>Puesto</th>
+            <th>Avatar</th>
+            <th>Participante</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1°</td>
+            <td><span class="avatar-mini">MH</span></td>
+            <td>Mateo Henao</td>
+            <td>58</td>
+          </tr>
+          <tr>
+            <td>2°</td>
+            <td><span class="avatar-mini">LS</span></td>
+            <td>Leider Serna</td>
+            <td>52</td>
+          </tr>
+          <tr>
+            <td>3°</td>
+            <td><span class="avatar-mini">CM</span></td>
+            <td>Camilo Morales</td>
+            <td>45</td>
+          </tr>
+          <tr>
+            <td>4°</td>
+            <td><span class="avatar-mini">CB</span></td>
+            <td>Cristian Benavides</td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>5°</td>
+            <td><span class="avatar-mini">JG</span></td>
+            <td>Juan Giraldo</td>
+            <td>30</td>
+          </tr>
+        </tbody>
+      </table>
+    </aside>
+
+  </main>
+
+</body>
+</html>
