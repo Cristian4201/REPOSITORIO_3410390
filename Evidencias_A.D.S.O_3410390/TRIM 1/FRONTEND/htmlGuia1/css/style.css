@@ -1,20 +1,50 @@
-body{
-    font-family: "Poppins", sans-serif;
-    
+/* ============================================
+   ESTILOS GENERALES DE LA PÁGINA
+   ============================================ */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    line-height: 1.6;
+    color: #222222;
+    background-color: #fafafa;
 }
 
-#caja-principal {
-    background-color: #1a1a1a; /* Color de fondo oscuro */
-    color: #ffffff;             /* Color de texto blanco */
+h1, h2 {
+    color: #1a1a2e;
 }
 
-.caja-secundaria {
-    border: 2px solid blue;     /* Borde sólido de 2px de grosor y color azul */
+/* Bonus (punto 6 de la teoría): pseudo-clase :not() + :last-of-type
+   para separar las secciones sin necesidad de usar <hr> */
+section:not(:last-of-type) {
+    border-bottom: 1px solid #dddddd;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
 }
 
-.tarjeta {
-    padding: 20px;              /* Espaciado interno (separa el texto del borde) */
-    margin: 15px;               /* Margen externo (separa la tarjeta de otros elementos) */
-    background-color: #f0f0f0;  /* Fondo gris claro para ver claramente dónde termina la tarjeta */
-    border: 1px solid #cccccc;  /* Borde gris sutil opcional */
+/* Estilo extra para la lista de lenguajes favoritos */
+.lista-favoritos {
+    background-color: #f0f4ff;
+    padding: 10px 25px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+/* Bonus (punto 6 de la teoría): pseudo-clase :hover en el enlace */
+a {
+    color: darkblue;
+    font-weight: bold;
+}
+
+a:hover {
+    color: crimson;
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    color: #888888;
+    margin-top: 30px;
+    font-size: 0.9em;
 }

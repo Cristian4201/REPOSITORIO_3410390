@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taller 1 - Fundamentos de HTML y CSS</title>
+
+    <!-- PUNTO 20: conexión con la hoja de estilos externa -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main>
+
+        <!-- ==========================================================
+             PUNTO 14: Estructura de texto básica
+             Requisitos: h1, <section>, h2, mínimo 2 párrafos
+             ========================================================== -->
+        <section id="pasatiempo">
+            <h1>Mi pasatiempo favorito</h1>
+            <h2>Mi viaje a travez de las paginas</h2>
+            <p>
+            La lectura es mi pasatiempo favorito porque me permite explorar mundos nuevos y conocer 
+            perspectivas diferentes sin salir de casa. Ya sea a través de una novela de suspenso 
+            o un texto de divulgación, cada libro ofrece una oportunidad única para expandir el 
+            conocimiento y la imaginación.
+            </p>
+            <p>
+            Además de ser una fuente de entretenimiento, considero que leer es un ejercicio fundamental 
+            para desarrollar la concentración y la empatía. Sumergirse en una buena historia ayuda a 
+            desconectarse del estrés diario y permite analizar situaciones complejas desde la mirada 
+            de diversos personajes y autores.
+            </p>
+        </section>
+
+        <!-- ==========================================================
+             PUNTO 15: Uso de clases e IDs
+             Requisitos: dos <div>, uno con id="caja-principal"
+             y otro con class="caja-secundaria"
+             ========================================================== -->
+        <section>
+            <h2>Práctica: uso de <i>id</i> y <i>class</i></h2>
+
+            <div id="caja-principal">
+                <p>
+                    Este contenedor usa el atributo <strong>id="caja-principal"</strong>.
+                    Un id debe ser único: solo puede existir un elemento con ese id
+                    en toda la página.
+                </p>
+            </div>
+
+            <div class="caja-secundaria">
+                <p>
+                    Este contenedor usa el atributo <strong>class="caja-secundaria"</strong>.
+                    A diferencia del id, una misma clase se puede repetir en muchos
+                    elementos distintos de la página.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             PUNTO 16: Énfasis en el texto (solo HTML, sin CSS)
+             Requisitos: <strong> para el nombre de la institución,
+             <em> para el nombre del programa de formación
+             ========================================================== -->
+        <section>
+            <h2>Sobre mi formación</h2>
+            <p>
+                Actualmente soy aprendiz en el <strong>SENA</strong>, una institución que 
+    brinda excelentes oportunidades de capacitación técnica en Colombia. 
+    Me encuentro enfocado en desarrollar mis habilidades dentro del programa 
+    de <em>Análisis y Desarrollo de Software (ADSO)</em>, donde aprendo los 
+    fundamentos de la programación y la arquitectura de sistemas.
+            </p>
+        </section>
+
+        <!-- ==========================================================
+             PUNTO 17: Listas y contenedores
+             Requisitos: <ol> con 3 lenguajes envuelta en
+             <div class="lista-favoritos">
+             ========================================================== -->
+        <section>
+            <div class="lista-favoritos">
+              <h2>Mis lenguajes de programación favoritos</h2>  
+                <ol>
+                    <li>Python</li>
+                    <li>JavaScript</li>
+                    <li>Java</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+             PUNTO 18: Enlaces
+             Requisitos: enlace a Google que se abra en pestaña nueva
+             ========================================================== -->
+        <section>
+            <h2>Enlace externo</h2>
+            <p>
+                <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">
+                    Visitar Google
+                </a>
+            </p>
+        </section>
+
+        <!-- ==========================================================
+             PUNTO 19: Imágenes básicas
+             Requisitos: atributo src (ruta) y atributo alt (texto alternativo)
+             ========================================================== -->
+        <section>
+            <h2>Imagen</h2>
+            <img src="https://img.freepik.com/fotos-premium/hombre-jugando-videojuegos-frente-computadora_115919-36676.jpg" alt="Persona jugando videojuegos frente a un computador">
+        </section>
+
+        <!-- ==========================================================
+             PUNTO 23: Espaciados - Box Model básico
+             Requisitos: <div class="tarjeta"> con padding: 20px
+             y margin: 15px definidos en el CSS
+             ========================================================== -->
+        <section>
+            <h2>Tarjeta con espaciados (Box Model)</h2>
+            <div class="tarjeta">
+                <p>
+                    Esta tarjeta tiene un <strong>padding</strong> (espaciado interno)
+                    de 20px y un <strong>margin</strong> (espaciado externo) de 15px,
+                    definidos en el archivo CSS.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Taller 1 &mdash; Fundamentos de HTML y CSS &mdash; ADSO</p>
+    </footer>
+
+</body>
+</html>
