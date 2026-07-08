@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TecnoBlog - Noticias de Tecnología</title>
+
+  <!-- Ejercicio 14: Fuente externa de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Ejercicio 19: Menú lateral con posición fija -->
+  <aside class="menu-lateral">
+    <h3>Enlaces</h3>
+    <ul>
+      <li><a href="#articulos">Últimas noticias</a></li>
+      <li><a href="#productos">Tutoriales</a></li>
+      <li><a href="#galeria">Reseñas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </aside>
+
+  <div class="contenido-principal">
+
+    <!-- Ejercicio 13: header con nav -->
+    <header>
+      <h1>TecnoBlog</h1>
+      <!-- Ejercicio 15: Barra de navegación con Flexbox -->
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#articulos">Inicio</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Sección 1: Artículos -->
+      <section id="articulos">
+        <article>
+          <h2>La Inteligencia Artificial en 2026</h2>
+          <p>La inteligencia artificial sigue avanzando rápidamente,
+          cambiando la forma en la que trabajamos y aprendemos todos los días.</p>
+        </article>
+        <article>
+          <h2>Novedades en Desarrollo Web</h2>
+          <p>Cada año aparecen nuevas herramientas y buenas prácticas
+          para construir páginas web más rápidas y accesibles.</p>
+        </article>
+      </section>
+
+      <!-- Sección 2: Ejercicio 16 - Tarjetas de producto dinámicas -->
+      <section id="productos">
+        <article>
+          <h2>Productos Destacados</h2>
+          <div class="contenedor-tarjetas">
+
+            <div class="tarjeta">
+              <img src="https://cdn.mos.cms.futurecdn.net/BGwih7VmxwusYHrsyiynoa.jpg" alt="Laptop UltraBook X">
+              <h3>Laptop UltraBook X</h3>
+              <p>Un equipo ligero y potente, ideal para trabajar desde cualquier lugar.</p>
+              <button>Ver más</button>
+            </div>
+
+            <div class="tarjeta">
+              <img src="https://i5.walmartimages.com.mx/mg/gm/3pp/asr/8b8be681-0303-4664-a814-757209038ea7.9780c41239976354f00238dfaf77414c.jpeg?odnHeight=2000&odnWidth=2000&odnBg=ffffff" alt="Smartphone Nova 5G">
+              <h3>Smartphone Nova 5G</h3>
+              <p>Cámara de alta resolución y batería de larga duración en un diseño compacto.</p>
+              <button>Ver más</button>
+            </div>
+
+            <div class="tarjeta">
+              <img src="https://tse1.mm.bing.net/th/id/OIP.GBwgLocMfu9Us9YYblA6lQHaHZ?r=0&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Auriculares SoundWave">
+              <h3>Auriculares SoundWave</h3>
+              <p>Sonido envolvente con cancelación de ruido activa para tu día a día.</p>
+              <button>Ver más</button>
+            </div>
+
+          </div>
+        </article>
+      </section>
+
+      <!-- Sección 3: Ejercicios 17 y 18 - Galería con CSS Grid y Media Queries -->
+      <section id="galeria">
+        <article>
+          <h2>Galería de Imágenes</h2>
+          <div class="galeria">
+            <div class="galeria-item"><img src="https://picsum.photos/300/200?random=4" alt="Imagen 1"></div>
+            <div class="galeria-item"><img src="https://picsum.photos/300/200?random=5" alt="Imagen 2"></div>
+            <div class="galeria-item"><img src="https://picsum.photos/300/200?random=6" alt="Imagen 3"></div>
+            <div class="galeria-item"><img src="https://picsum.photos/300/200?random=7" alt="Imagen 4"></div>
+            <div class="galeria-item"><img src="https://picsum.photos/300/200?random=8" alt="Imagen 5"></div>
+            <div class="galeria-item"><img src="https://picsum.photos/300/200?random=9" alt="Imagen 6"></div>
+          </div>
+        </article>
+      </section>
+
+      <!-- Sección 4: Ejercicios 21 y 22 - Formulario de contacto -->
+      <section id="contacto">
+        <article>
+          <h2>Contáctanos</h2>
+          <form>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo Electrónico</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+          </form>
+        </article>
+      </section>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2026 TecnoBlog. Todos los derechos reservados.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
